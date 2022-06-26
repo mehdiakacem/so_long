@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putnbrhexaup.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/26 15:40:00 by makacem           #+#    #+#             */
-/*   Updated: 2022/06/18 16:29:44 by makacem          ###   ########.fr       */
+/*   Created: 2022/01/04 11:50:43 by makacem           #+#    #+#             */
+/*   Updated: 2022/06/15 10:30:43 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+int	ft_putnbrhexaup(unsigned long int nb)
 {
-	int	i;
+	static int	ret;
+	char		*base;
 
-	if (!*str)
-		return (0);
-	i = 0;
-	while (*str)
+	ret = 0;
+	base = "0123456789ABCDEF";
+	if (nb <= 15)
+		ret += ft_putchar(base[nb]);
+	else if (nb >= 16)
 	{
-		str++;
-		i++;
+		ft_putnbrhexaup(nb / 16);
+		ret += ft_putchar(base[nb % 16]);
 	}
-	return (i);
+	return (ret);
 }

@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/26 15:40:00 by makacem           #+#    #+#             */
-/*   Updated: 2022/06/18 16:29:44 by makacem          ###   ########.fr       */
+/*   Created: 2022/01/07 14:51:05 by makacem           #+#    #+#             */
+/*   Updated: 2022/06/15 13:21:43 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
 
-size_t	ft_strlen(const char *str)
-{
-	int	i;
+# define GET_NEXT_LINE_H
 
-	if (!*str)
-		return (0);
-	i = 0;
-	while (*str)
-	{
-		str++;
-		i++;
-	}
-	return (i);
-}
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdio.h>
+
+char	*get_next_line(int fd);
+size_t	ft_strlen_gnl(const char *str);
+size_t	ft_strlcpy_gnl(char *dst, char *src, size_t size);
+char	*ft_strjoin_gnl(char *s1, char *s2);
+char	*ft_strchr_gnl(char *s, int c);
+void	*ft_calloc_gnl(size_t count, size_t size);
+
+#endif

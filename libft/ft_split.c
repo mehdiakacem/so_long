@@ -6,7 +6,7 @@
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 13:40:17 by makacem           #+#    #+#             */
-/*   Updated: 2021/12/17 11:45:38 by makacem          ###   ########.fr       */
+/*   Updated: 2022/06/26 16:41:42 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static char	*ft_skip_s_c(char *s, char c)
 {
 	while (*s && *s != c)
 		s++;
-	while (*s == c)
+	if (*s == c)
 		s++;
 	return (s);
 }
@@ -81,8 +81,6 @@ char	**ft_split(char const *s, char c)
 		splited_s = NULL;
 		return (ft_invalid_read_check(splited_s));
 	}
-	while (*s == c)
-		s++;
 	count = ft_countnstr(s, c);
 	splited_s = malloc((count + 1) * sizeof * splited_s);
 	if (!splited_s)

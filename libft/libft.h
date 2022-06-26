@@ -6,7 +6,7 @@
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 10:37:40 by makacem           #+#    #+#             */
-/*   Updated: 2021/12/17 11:40:07 by makacem          ###   ########.fr       */
+/*   Updated: 2022/06/15 10:27:21 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 # define LIBFT_H
 
+# include <stdio.h>
 # include <stdlib.h>
+# include <stdarg.h>
 # include <unistd.h>
 
 int		ft_isalpha(int c);
@@ -52,5 +54,11 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+int		ft_putnbrhexa(unsigned long int nb);
+int		ft_putnbrhexaup(unsigned long int nb);
+int		ft_printf(const char *str, ...);
+int		ft_putchar(char c);
+int		ft_putnbr(long int n);
+int		ft_putstr(char *s);
 
 #endif

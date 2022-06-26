@@ -6,7 +6,7 @@
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 19:38:25 by makacem           #+#    #+#             */
-/*   Updated: 2021/12/17 14:13:47 by makacem          ###   ########.fr       */
+/*   Updated: 2022/06/06 10:02:28 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strrchr(const char *s, int c)
 	str_len = ft_strlen(s);
 	if (!s)
 		return (NULL);
-	if (s == '\0')
+	if (s == (void *)0)
 		return ((char *)s);
 	s = s + str_len;
 	while (str_len + 1 > 0)
